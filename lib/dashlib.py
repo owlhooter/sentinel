@@ -19,7 +19,7 @@ def is_valid_dash_address(address, network='mainnet'):
     # 4 checksum bytes are appended so the total number of
     # base58 encoded bytes should be 25.  This means the number of characters
     # in the encoding should be about 34 ( 25 * log2( 256 ) / log2( 58 ) ).
-    dash_version = 140 if network == 'testnet' else 76
+    dash_version = 88 if network == 'testnet' else 50
 
     # Check length (This is important because the base58 library has problems
     # with long addresses (which are invalid anyway).
@@ -236,7 +236,7 @@ def did_we_vote(output):
     err_msg = ''
 
     try:
-        detail = output.get('detail').get('dash.conf')
+        detail = output.get('detail').get('maza.conf')
         result = detail.get('result')
         if 'errorMessage' in detail:
             err_msg = detail.get('errorMessage')

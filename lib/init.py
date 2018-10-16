@@ -95,7 +95,7 @@ def main():
         sys.exit(1)
 
     if not has_dash_conf():
-        print("DashCore must be installed and configured, including JSONRPC access in dash.conf")
+        print("Maza must be installed and configured, including JSONRPC access in maza.conf")
         sys.exit(1)
 
 
